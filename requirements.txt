@@ -1,2 +1,6 @@
 djangorestframework
 django
+open3d
+markitdown
+pdf2image
+ExtractTable

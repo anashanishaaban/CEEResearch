@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from .models import Message
+from .models import PointCloudFile
 
-class MessageSerializer(serializers.ModelSerializer):
+class PointCloudFileSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Message
+        model = PointCloudFile
         fields = '__all__'

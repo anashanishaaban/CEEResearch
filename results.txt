@@ -1,0 +1,375 @@
+MINNESOTA DEPARTMENT OF TRANSPORTATION - GEOTECHNICAL SECTION
+
+LABORATORY LOG & TEST RESULTS - SUBSURFACE EXPLORATION
+UNIQUE NUMBER  80630
+
+State Project
+6012-51
+
+Bridge No. or Job Desc.
+SLIDE
+
+Trunk Highway/Location
+US Highway  TH75
+
+Boring No.
+T01 Si
+
+Ground Elevation
+847.8
+
+(Surveyed)
+
+Location
+
+Polk County Coordinate System
+ X=389488    Y=142438
+
+Latitude (North)=47°36'51.65"
+
+Longitude (West)=96°48'52.90"
+
+H
+T
+P
+E
+D
+
+Depth
+
+Elev.
+
+y
+g
+o
+o
+h
+
+l
+
+t
+i
+
+L
+
+5
+
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+40
+
+45
+
+50
+
+55
+
+60
+
+65
+
+70
+
+75
+
+80
+
+85
+
+90
+
+95
+
+5.5
+842.3
+8.8
+839.0
+
+24.0
+823.8
+
+49.0
+798.8
+
+54.0
+793.8
+
+62.0
+785.8
+66.5
+781.3
+71.0
+776.8
+
+76.5
+771.3
+
+92.0
+755.8
+
+98.0
+749.8
+
+Classification
+
+                                     Top Soil / Fill
+Clay Loam slightly organic with a few roots and traces of
+Sand at 4.5'; dark-browns and moist
+                                     Top Soil / Fill
+slightly organic Clay; black and moist
+
+Fat Clay with some small pebbles and Slickenside at 9.0',
+18.4' with IOS, thinly varved traces and seams of
+light-brown Silt from 9.5'-11.5', very wet Silty Clay Loam
+layer at 13.5' along with a few roots at 11.5'; gray-brown to
+dark-gray, moist
+
+ Fat Clay with a few stones and pebbles, blocky 33.0'- 38.0'
+with slickenside at 43.0', 45.0', 48.7'and 49.3' dark-gray and
+moist
+
+Fat Clay, dark-gray and moist
+
+Silty Clay with a 1"seam of Silt at 58.6' and many small
+pockets of Silt at 59.0'; gray and moist
+
+Silt with thin traces of slightly plastic Silt Loam; gray and
+very moist
+slightly plastic Silt Loam with vertical thin Seams and traces
+of gray Silt; dark-gray, wet
+
+Silt with thin traces of slightly plastic Silt Loam; light-gray,
+wet
+
+Very Fine Sand, grays and saturated
+
+Silt with thin traces of slightly plastic Silt Loam; Light-gray,
+wet
+
+Bottom of Hole -98.0'
+Water level is inderterminate due to use of drilling fluids
+
+Drill Machine
+
+205120 CME(LC55) Track
+
+SHEET 1 of 1
+
+Hammer
+
+CME Automatic Calibrated
+
+Drilling
+Completed
+
+3/16/16
+
+SPT
+N
+60
+
+MC
+(%)
+
+COH
+(psf)
+
+(pcf)
+
+l
+i
+
+o
+S
+
+Other Tests
+Or Remarks
+
+REC
+(%)
+
+RQD
+(%)
+
+ACL
+(ft)
+
+Core
+Breaks
+
+k
+c
+o
+R
+
+Formation
+or Member
+
+n
+o
+
+i
+t
+
+a
+r
+e
+p
+O
+
+g
+n
+
+i
+l
+l
+i
+r
+
+D
+
+880
+
+115
+
+UC 8.8'-9.3'
+
+100
+
+109
+
+900
+
+114
+
+550
+
+111
+
+950
+
+110
+
+% C 62.7; % Si 35.8
+UC, DS 13.4'-14.9'
+Drill mud came up through
+crack under drill rig
+advanced augers to 18.0'
+UC, DS 18.2'-19.2'
+Triax 24.0'
+
+% C 60.3; % Si 34.5
+Triax 29.0'
+
+Triax 34.0'
+
+Triax 39.0'
+
+UC, DS 44.0'-45.0'
+%C-70.6;Si-26.7
+%C-57.8;Si-35.6
+UC, DS 49.0'-50.0'
+
+%Si-52.2;C-39.6
+
+Triax,DS 58.3'-59.3' % C
+33.7; % Si 63.3
+
+High Silt content
+
+4
+11
+
+4
+
+10
+
+8
+
+6
+
+5
+
+6
+
+7
+
+7
+
+9
+
+46
+
+6
+
+11
+
+16
+
+26
+
+26
+
+18
+
+31
+38
+
+36
+28
+39
+38
+
+40
+39
+
+46
+44
+
+46
+45
+
+44
+45
+
+45
+42
+
+53
+50
+
+45
+
+33
+
+25
+
+24
+
+33
+
+26
+
+26
+
+25
+
+26
+
+23
+
+Library:G:\GINT\SYSTEM_FILES\CURRENT\MNDOT_GLB_20190619.GLB  Report Format:SPT LOG
+
+Field Crew Chief: Wassen, Kevin Soil Class:JAH Rock Class:  Edit:  Date: 4/5/22
+G:\GINT\PROJECTS-ARCHIVE-UUID\60POLK\6012-51.GPJ
+

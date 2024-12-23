@@ -1,0 +1,213 @@
+﻿m
+DEPARTMENT OF
+TRANSPORTATION
+MINNESOTA DEPARTMENT OF TRANSPORTATION - GEOTECHNICAL SECTION
+LABORATORY LOG & TEST RESULTS - SUBSURFACE EXPLORATION
+UNIQUE NUMBER 80630
+State Project
+Bridge No. or Job Desc.
+Trunk Highway/Location
+Boring No.
+Ground Elevation
+6012-51
+SLIDE
+US Highway TH75
+T01 Si
+847.8
+(Surveyed)
+Location
+Polk County Coordinate System
+Drill Machine 205120 CME(LC55) Track
+SHEET 1 of 1
+X=389488 Y=142438
+Hammer CME Automatic Calibrated
+Drilling
+3/16/16
+Completed
+Latitude (North)=47°36'51.65" Longitude (West)=96°48'52.90"
+SPT
+MC
+COH
+Y
+Other Tests
+Depth
+N60
+(%)
+(psf)
+(pcf)
+Or Remarks
+REC
+RQD
+ACL
+Core
+Formation
+Elev.
+Classification
+(%)
+(%)
+(ft)
+Breaks
+or Member
+Top Soil / Fill
+Clay Loam slightly organic with a few roots and traces of
+5
+5.5
+4
+Sand at 4.5'; dark-browns and moist
+31
+842.3
+Top Soil / Fill
+11
+38
+8.8
+10
+slightly organic Clay; black and moist
+36
+880
+115
+839.0
+UC 8.8'-9.3'
+4
+28
+Fat Clay with some small pebbles and Slickenside at 9.0',
+18.4' with IOS, thinly varved traces and seams of
+39
+100
+109
+15
+% C 62.7; % Si 35.8
+10
+light-brown Silt from 9.5'-11.5', very wet Silty Clay Loam
+38
+UC, DS 13.4'-14.9"
+layer at 13.5' along with a few roots at 11.5'; gray-brown to
+40
+900
+114
+Drill mud came up through
+20
+dark-gray, moist
+8
+39
+crack under drill rig
+PD
+24.0
+advanced augers to 18.0'
+46
+25
+823.8
+UC, DS 18.2'-19.2"
+6
+44
+Triax 24.0
+PD
+46
+30
+% C 60.3; % Si 34.5
+5
+45
+PD
+Triax 29.0"
+35
+Fat Clay with a few stones and pebbles, blocky 33.0'-38.0
+44
+6
+Triax 34.0'
+with slickenside at 43.0', 45.0', 48.7'and 49.3' dark-gray and
+45
+PD
+moist
+45
+40
+7
+Triax 39.0'
+42
+PD
+53
+550
+111
+45
+7
+UC, DS 44.0'-45.0"
+50
+PD
+%C-70.6;Si-26.7
+49.0
+45
+950
+110
+50
+%C-57.8;Si-35.6
+798.8
+Fat Clay, dark-gray and moist
+PD
+UC, DS 49.0'-50.0"
+54.0
+9
+33
+55
+793.8
+%Si-52.2;C-39.6
+Silty Clay with a 1"seam of Silt at 58.6' and many small
+PD
+60
+pockets of Silt at 59.0'; gray and moist
+25
+Triax,DS 58.3'-59.3" % C
+62.0
+PD
+33.7; % Si 63.3
+785.8
+Silt with thin traces of slightly plastic Silt Loam; gray and
+46
+24
+65
+66.5
+very moist
+PD
+781.3
+slightly plastic Silt Loam with vertical thin Seams and traces
+6
+33
+70
+71.0
+of gray Silt; dark-gray, wet
+776.8
+PD
+Silt with thin traces of slightly plastic Silt Loam; light-gray,
+11
+26
+75
+76.5
+wet
+PD
+771.3
+16
+26
+80
+PD
+Very Fine Sand, grays and saturated
+26
+25
+High Silt content
+85
+PD
+26
+26
+90
+92.0
+PD
+755.8
+Silt with thin traces of slightly plastic Silt Loam; Light-gray,
+18
+23
+95
+wet
+98.0
+PD
+749.8
+Bottom of Hole -98.0
+Water level is inderterminate due to use of drilling fluids
+Field Crew Chief: Wassen, Kevin Soil Class: JAH Rock Class: Edit: Date: 4/5/22
+brary:G:\GINT\SYSTEM_FILES\CURRENTMNDOT_GLB_20190619.GLE Report Format:SPT
+G:\GINT\PROJECTS-ARCHIVE-UUID\60POLK\6012-51.GPJ
