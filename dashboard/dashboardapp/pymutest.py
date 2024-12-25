@@ -1,15 +1,9 @@
 from pdf2image import convert_from_path
-
-# Convert the PDF into images
-pages = convert_from_path('/Users/anasshaaban/ResearchProject/dashboard/dashboardapp/080630.pdf', 500)
-
-# Save each page as an image file
-for count, page in enumerate(pages):
-    page.save(f'out{count}.jpg', 'JPEG')
-
-print("Pages have been successfully converted to images.")
-
+from markitdown import MarkItDown
+import sys
 from ExtractTable import ExtractTable
+import pandas as pd
+
 
 print(ExtractTable.VERSION)
 
@@ -38,3 +32,13 @@ output_excel_path = "/Users/anasshaaban/ResearchProject/dashboard/dashboardapp/s
 accumulated_data.to_excel(output_excel_path, index=False)
 
 print(f"Tables extracted and saved to {output_excel_path}")
+
+md = MarkItDown()
+result = md.convert("/Users/anasshaaban/ResearchProject/dashboard/dashboardapp/080630.pdf")
+print(result.text_content)
+
+with open("results.txt", "a") as myfile:
+    myfile.write(result.text_content)
+    print("Done")
+
+myfile.close()

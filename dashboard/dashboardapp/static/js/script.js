@@ -17,12 +17,47 @@ function hideAllTables() {
     settlementTable.style.display = 'none';
 }
 
+// Function to populate the property category dropdown
+function updatePropertyCategories(soilType) {
+    // Clear the property category dropdown
+    propertyCategorySelect.innerHTML = ''; // Reset dropdown
+
+    // Add default placeholder
+    const defaultOption = document.createElement('option');
+    defaultOption.value = '';
+    defaultOption.textContent = '--Select--';
+    propertyCategorySelect.appendChild(defaultOption);
+
+    // Common categories
+    const categories = [
+        { value: 'basic', label: 'Basic Properties' },
+        { value: 'engineering', label: 'Engineering Properties' },
+        { value: 'hydraulic', label: 'Hydraulic Properties' },
+    ];
+
+    // Add Settlement Parameters for Clay and Silt
+    if (soilType === 'clay' || soilType === 'silt') {
+        categories.push({ value: 'settlement', label: 'Settlement Parameters' });
+    }
+
+    // Populate the dropdown
+    categories.forEach(category => {
+        const option = document.createElement('option');
+        option.value = category.value;
+        option.textContent = category.label;
+        propertyCategorySelect.appendChild(option);
+    });
+}
+
 // When soil type changes
 soilTypeSelect.addEventListener('change', function () {
     const soilType = soilTypeSelect.value;
+
     if (soilType) {
         // Show property category dropdown
         propertyCategoryContainer.style.display = 'block';
+        // Update property category options based on soil type
+        updatePropertyCategories(soilType);
         // Reset property category and hide tables
         propertyCategorySelect.value = '';
         tablesContainer.style.display = 'none';
@@ -42,7 +77,7 @@ propertyCategorySelect.addEventListener('change', function () {
     if (category) {
         // Show tables container
         tablesContainer.style.display = 'block';
-        
+
         // Show the corresponding table
         switch (category) {
             case 'basic':
