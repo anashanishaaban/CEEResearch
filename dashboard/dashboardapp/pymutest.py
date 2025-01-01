@@ -15,7 +15,7 @@ usage = et_sess.check_usage()
 
 print(usage)
 
-pdf_location = "/Users/anasshaaban/ResearchProject/dashboard/dashboardapp/080630.pdf"  
+pdf_location = "/Users/anasshaaban/ResearchProject/dashboard/dashboardapp/070575.pdf"  
 
 table_data = et_sess.process_file(filepath=pdf_location, output_format="df", pages="all")
 
@@ -37,7 +37,7 @@ md = MarkItDown()
 result = md.convert("/Users/anasshaaban/ResearchProject/dashboard/dashboardapp/080630.pdf")
 print(result.text_content)
 
-with open("results.txt", "a") as myfile:
+with open("/Users/anasshaaban/ResearchProject/dashboard/dashboardapp/saved/070575", "a") as myfile:
     myfile.write(result.text_content)
     print("Done")
 

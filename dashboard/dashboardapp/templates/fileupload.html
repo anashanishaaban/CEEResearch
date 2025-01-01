@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload</title>
+    <link rel="stylesheet" href="{% static 'styles/upload.css' %}">
+</head>
+<body>
+    <div class="upload-container">
+        <h1>Upload Your Files</h1>
+        <form action="/upload/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="file-upload" class="custom-file-upload">
+                Choose Excel Files
+            </label>
+            <input id="file-upload" type="file" name="files" accept=".xlsx" multiple>
+            <button type="submit" class="upload-button">Upload</button>
+        </form>
+
+        <!-- Container to display selected file names -->
+        <h2>Selected Files:</h2>
+        <div id="file-list">No files selected.</div>
+    </div>
+
+
+    <script src="{% static 'js/upload.js' %}"></script>
+</body>
+</html>

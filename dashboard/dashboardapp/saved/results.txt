@@ -1,0 +1,323 @@
+MINNESOTA DEPARTMENT OF TRANSPORTATION - GEOTECHNICAL SECTION
+
+LABORATORY LOG & TEST RESULTS - SUBSURFACE EXPLORATION
+UNIQUE NUMBER  70575
+U.S. Customary Units
+
+This boring was taken by American Engineering
+Testing under a consultant contract for Mn/DOT
+
+State Project
+0503-78
+
+Bridge No. or Job Desc.
+73014
+
+Trunk Highway/Location
+  TH 23 Desoto Bridge
+
+Boring No.
+B06
+
+Ground Elevation
+986.8
+
+(DTM)
+
+Location
+
+Benton Co. Coordinate:  X=755755    Y=203226
+
+(ft.)
+
+Drill Machine
+
+91C
+
+Latitude (North)=45°50'16.22"
+
+Longitude (West)=93°02'47.83"
+
+Hammer
+
+Auto Calibrated
+
+SHEET 1 of 1
+
+Drilling
+Completed
+
+5/12/08
+
+No Station-Offset Information Available
+
+Classification
+
+g
+n
+
+i
+l
+l
+i
+r
+
+D
+
+y
+g
+o
+o
+h
+
+l
+
+t
+i
+
+L
+
+Depth
+
+Elev.
+
+3.6
+983.2
+
+Barge
+
+Water
+
+n
+o
+
+i
+t
+
+a
+r
+e
+p
+O
+
+SPT
+N60
+
+MC
+(%)
+
+COH
+(psf)
+
+(pcf)
+
+l
+i
+
+o
+S
+
+Other Tests
+Or Remarks
+
+REC
+(%)
+
+RQD
+(%)
+
+ACL
+(ft)
+
+Core
+Breaks
+
+H
+T
+P
+E
+D
+
+5
+
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+40
+
+45
+
+50
+
+55
+
+60
+
+16.3
+970.5
+19.0
+967.8
+22.0
+964.8
+24.0
+962.8
+28.0
+958.8
+
+33.5
+953.3
+34.5
+952.3
+39.5
+947.3
+42.0
+944.8
+44.0
+942.8
+48.0
+938.8
+
+60.0
+926.8
+
+GRAVEL WITH SAND, brown, saturated, very loose, A-1-a,
+alluvium
+GRAVELLY SAND, coarse grained, brown, saturated medium
+dense, A-1-b, alluvium
+SAND, a little gravel, fine grained, grayish brown, a little black,
+saturated, dense, laminations of loamy sand, A-3, alluvium
+GRAVELLY SAND, coarse to fine grained, brown, saturated,
+very dense, A-1-b, alluvium
+
+SAND, a little gravel, fine to coarse grained, light brown,
+saturated, medium dense to very dense, A-3, alluvium
+
+LOAMY SAND, fine grained, grayish brown, saturated, very
+dense, A-2-4, alluvium
+SILT LOAM, grayish brown, saturated, medium dense to dense,
+lenses of fine to coarse grained sand and coarse grained sand
+with gravel, A-4, alluvium
+SAND, fine to coarse grained, light brown, saturated, dense,
+A-3, alluvium
+GRAVEL WITH SAND, possible boulders, grayish brown,
+saturated, very dense, A-1-a, alluvium
+No sample recovery
+Top of Bedrock
+GRANITE
+Weathering:  Fresh
+Discontinuties:  Shallow angle fracture at 57.2'
+Color:  Gray, black and pink specked
+Grain Size:  Coarse to fine
+Hardness:  Very hard
+
+Bottom of Hole - 60'
+
+3
+
+25
+
+34
+
+68
+
+27
+
+27
+
+53
+
+26
+
+35
+
+36
+
+168
+50/0
+
+50/0
+
+100
+
+100
+
+6
+
+11
+
+29
+16
+13
+
+13
+
+15
+19
+22
+
+25
+
+15
+
+8
+
+100
+
+100
+
+92
+
+92
+
+k
+c
+o
+R
+
+Formation
+or Member
+SPT hammer calibrated to
+64.5% efficiency on 9/13/07
+(110 lb. hammer)
+
+4.25" HSA used as casing to
+39', drilling mud used in
+casing
+
+-#200=1%
+
+-#200=1%
+
+-#200=6%
+Partial N-value from 23.5' to
+23.8' was 65/0.3. Apparent
+boulder.
+-#200=7%
+No sample recovery
+
+Apparent boulders at
+44.5'-45'
+No sample recovery from 44'
+to 49.2'
+REFORMATORY GRANITE
+
+Note: Apparent fracture 5"
+from bottom likely caused the
+92% recovery (lower 5" likely
+remained intact). In this case,
+true RQD may be 100%
+
+Index Sheet Code 1.0
+
+Soil Class: Rock Class:  Edit:  Date: 3/4/11
+G:\GINT\PROJECTS-CLOSE-OUT\0503-78 DESOTO BRIDGE_UPDATE.GPJ
+

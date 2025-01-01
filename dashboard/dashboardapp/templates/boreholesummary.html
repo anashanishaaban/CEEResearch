@@ -1,0 +1,57 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geotechnical Summary</title>
+    <link rel="stylesheet" href="{% static 'styles/summary.css' %}">
+</head>
+<body>
+    <h1>Geotechnical Summary</h1>
+
+    {% if processed_data and processed_data.header_data %}
+        <!-- Header Table -->
+        <table class="header-table">
+            <tr>
+                <th>Borehole ID</th>
+                <th>Ground elevation (ft)</th>
+                <th>Depth of exploration (ft)</th>
+                <th>Ground water depth</th>
+                <th>Year of exploration</th>
+            </tr>
+            <tr>
+                <td>{{ processed_data.header_data.borehole_id }}</td>
+                <td>{{ processed_data.header_data.ground_elevation }}</td>
+                <td>{{ processed_data.header_data.depth_of_exploration }}</td>
+                <td>{{ processed_data.header_data.groundwater_depth }}</td>
+                <td>{{ processed_data.header_data.year_of_exploration }}</td>
+            </tr>
+        </table>
+
+        <!-- Soil Layers Table -->
+        {% if processed_data.soil_layers %}
+            <table class="summary-table">
+                <tr>
+                    <th colspan="2" class="highlight">Soil Layer Summary</th>
+                </tr>
+                <tr>
+                    <th>Depth Range (ft)</th>
+                    <th>Soil Type</th>
+                </tr>
+                {% for layer in processed_data.soil_layers %}
+                <tr>
+                    <td>{{ layer.depth_start }} - {{ layer.depth_end }}</td>
+                    <td>{{ layer.soil_type }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <div class="no-data">No soil layer data available</div>
+        {% endif %}
+    {% else %}
+        <div class="no-data">No borehole data available</div>
+    {% endif %}
+</body>
+</html>

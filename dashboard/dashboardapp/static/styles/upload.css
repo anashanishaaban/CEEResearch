@@ -1,0 +1,67 @@
+/* General page styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e0dada;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.upload-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(183, 41, 41, 0.1);
+    text-align: center;
+    width: 400px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Custom file upload label */
+.custom-file-upload {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 16px;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.custom-file-upload:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Hide the default file input */
+input[type="file"] {
+    display: none;
+}
+
+/* Upload button styling */
+.upload-button {
+    font-size: 16px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.upload-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}

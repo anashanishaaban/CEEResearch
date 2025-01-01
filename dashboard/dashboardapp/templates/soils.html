@@ -1,0 +1,76 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+    <title>Soil Selection</title>
+    <link rel="stylesheet" href="{% static 'styles/soils.css' %}" /></head>
+<body>
+    <h1>Select Soil Properties</h1>
+    
+    <!-- Soil Type Dropdown -->
+    <div class="dropdown-container">
+        <label for="soil-type">Select Soil Type:</label>
+        <select id="soil-type">
+            <option value="">--Select--</option>
+            <option value="gravel">Gravel</option>
+            <option value="sand">Sand</option>
+            <option value="silt">Silt</option>
+            <option value="clay">Clay</option>
+            <option value="general">General Soil</option>
+        </select>
+    </div>
+    
+    <!-- Property Category Dropdown (hidden initially) -->
+    <div class="dropdown-container" id="property-category-container" style="display: none;">
+        <label for="property-category">Select Property Category:</label>
+        <select id="property-category">
+            <option value="">--Select--</option>
+            <option value="basic">Basic Properties</option>
+            <option value="engineering">Engineering Properties</option>
+            <option value="hydraulic">Hydraulic Properties</option>
+        </select>
+    </div>
+    
+    <!-- Tables Container -->
+    <div id="tables-container" style="display: none;">
+        <!-- Each table is associated with a category and shown dynamically via JS -->
+        <table id="basic-table" class="hidden-table">
+            <caption>Basic Properties</caption>
+            <thead>
+                <tr><th>Property</th><th>COV(%)</th><th>r</th><th>δx (m)</th><th>δy (m)</th></tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        
+        <table id="engineering-table" class="hidden-table">
+            <caption>Basic Properties</caption>
+            <thead>
+                <tr><th>Property</th><th>COV(%)</th><th>r</th><th>δx (m)</th><th>δy (m)</th></tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        
+        <table id="hydraulic-table" class="hidden-table">
+            <caption>Basic Properties</caption>
+            <thead>
+                <tr><th>Property</th><th>COV(%)</th><th>r</th><th>δx (m)</th><th>δy (m)</th></tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        
+        <table id="settlement-table" class="hidden-table">
+            <caption>Basic Properties</caption>
+            <thead>
+                <tr><th>Property</th><th>COV(%)</th><th>r</th><th>δx (m)</th><th>δy (m)</th></tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    
+    
+    <script src="{% static 'js/soils.js' %}"></script>
+</body>
+</html>
