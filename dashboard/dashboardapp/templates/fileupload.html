@@ -9,14 +9,15 @@
     <link rel="stylesheet" href="{% static 'styles/upload.css' %}">
 </head>
 <body>
+    <link rel="stylesheet" href="{% static 'styles/upload.css' %}">
     <div class="upload-container">
         <h1>Upload Your Files</h1>
         <form action="/upload/" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <label for="file-upload" class="custom-file-upload">
-                Choose Excel Files
+                Choose PDF Files
             </label>
-            <input id="file-upload" type="file" name="files" accept=".xlsx" multiple>
+            <input id="file-upload" type="file" name="files" accept=".pdf" multiple>
             <button type="submit" class="upload-button">Upload</button>
         </form>
 

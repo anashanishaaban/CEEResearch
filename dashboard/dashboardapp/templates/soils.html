@@ -8,6 +8,13 @@
     <title>Soil Selection</title>
     <link rel="stylesheet" href="{% static 'styles/soils.css' %}" /></head>
 <body>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            loadClassifiedData();
+        });
+    </script>
+    
     <h1>Select Soil Properties</h1>
     
     <!-- Soil Type Dropdown -->

@@ -50,8 +50,47 @@
         {% else %}
             <div class="no-data">No soil layer data available</div>
         {% endif %}
+
+        <!-- Averages Table -->
+        {% if processed_data.averages %}
+            <table class="averages-table">
+                <tr>
+                    <th colspan="2" class="highlight">Average Values</th>
+                </tr>
+                <tr>
+                    <th>Average SPT (N60)</th>
+                    <td>{{ processed_data.averages.average_spt_n60 }}</td>
+                </tr>
+                <tr>
+                    <th>Average Moisture Content (%)</th>
+                    <td>{{ processed_data.averages.average_moisture_content }}</td>
+                </tr>
+                <tr>
+                    <th>Average Cohesion (psf)</th>
+                    <td>{{ processed_data.averages.average_cohesion }}</td>
+                </tr>
+                <tr>
+                    <th>Average Bulk Unit Weight (pcf)</th>
+                    <td>{{ processed_data.averages.average_bulk_unit_weight }}</td>
+                </tr>
+            </table>
+        {% else %}
+            <div class="no-data">No average data available</div>
+        {% endif %}
     {% else %}
         <div class="no-data">No borehole data available</div>
     {% endif %}
+
+    <div class="chat-container">
+        <h2>Modify Data</h2>
+        <textarea id="chat-box" rows="4" placeholder="Enter your input to modify the table..."></textarea>
+        <button id="submit-chat" class="submit-button">Submit</button>
+        <div id="chat-feedback" class="feedback"></div>
+    </div>
+
+    <script>
+        const csrfToken = "{{ csrf_token }}";
+    </script>
+    <script src="{% static 'js/summary.js' %}"></script>
 </body>
 </html>

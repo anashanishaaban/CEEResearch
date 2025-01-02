@@ -17,6 +17,10 @@ urlpatterns = [
 
     # File upload page
     path("upload/", views.upload_file, name="upload_file"),
+
+    path("update-table", views.update_table, name="update_table"),
+
+    path("process-references", views.process_references, name="process_references"),
 ]
 
 # Serve media files during development

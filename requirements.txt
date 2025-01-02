@@ -7,3 +7,4 @@ ExtractTable
 pandas
 pydantic
 openai
+langchain
