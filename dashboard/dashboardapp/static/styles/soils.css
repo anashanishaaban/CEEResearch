@@ -1,9 +1,11 @@
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
+    background-color: #eee6e6;
 }
 
 h1 {
+    color: #333;
     text-align: center;
     margin-bottom: 30px;
 }
@@ -18,8 +20,10 @@ label {
 }
 
 select {
-    padding: 5px;
+    padding: 8px;
     font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 #tables-container {
@@ -30,17 +34,147 @@ select {
     display: none;
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 .hidden-table caption {
-    font-size: 1.2em;
+    font-size: 1.4em;
     margin-bottom: 10px;
     font-weight: bold;
+    color: #4CAF50;
+    text-align: left;
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+    background-color: #f2f2f2;
 }
 
 .hidden-table th, .hidden-table td {
-    border: 1px solid #ccc;
-    padding: 8px;
+    padding: 12px 15px;
     text-align: left;
+    border: 1px solid #ddd;
+}
+
+.hidden-table th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.hidden-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.hidden-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.hidden-table td {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.hidden-table tbody tr:last-child td {
+    border-bottom: 2px solid #ddd;
+}
+
+.no-data {
+    text-align: center;
+    color: #666;
+    padding: 20px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-style: italic;
+}
+
+.highlight {
+    background-color: #2E7D32;
+    color: white;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.select-container {
+    display: inline-block;
+    position: relative;
+    margin: 20px;
+    width: 250px;
+}
+
+.select-container select {
+    display: none; /* Hide the native dropdown */
+}
+
+.select-styled {
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #3c7819;
+    color: #fff;
+    padding: 12px 15px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    text-align: left;
+    transition: all 0.2s ease-in;
+}
+
+.select-styled:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border: 7px solid transparent;
+    border-color: #fff transparent transparent transparent;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+}
+
+.select-styled:hover {
+    background-color: #165224;
+}
+
+.select-styled.active {
+    background-color: #219229;
+}
+
+.select-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background-color: #259221;
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+    overflow: hidden;
+    list-style: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.select-options li {
+    padding: 12px 15px;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+}
+
+.select-options li:hover {
+    background-color: #fff;
+    color: #35c02b;
+}
+
+.select-options li[rel="hide"] {
+    display: none;
 }

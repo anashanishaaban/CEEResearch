@@ -8,3 +8,4 @@ pandas
 pydantic
 openai
 langchain
+langchain_community

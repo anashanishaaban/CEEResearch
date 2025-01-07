@@ -255,53 +255,53 @@ def boreholesummary(request):
     processed_data = request.session.get("processed_data", {})
     return render(request, "boreholesummary.html", {"processed_data": processed_data})
 
-def process_references(request):
-    """
-    Extract tables from PDFs in the references directory and classify them using OpenAI.
-    """
-    references_dir = "/Users/anasshaaban/ResearchProject/dashboard/dashboardapp/references"
-    extracted_data = []
+# def process_references(request):
+#     """
+#     Extract tables from PDFs in the references directory and classify them using OpenAI.
+#     """
+#     references_dir = "/Users/anasshaaban/ResearchProject/dashboard/dashboardapp/references"
+#     extracted_data = []
 
-    try:
-        # Loop through all PDF files in the directory
-        for filename in os.listdir(references_dir):
-            if filename.endswith(".pdf"):
-                pdf_path = os.path.join(references_dir, filename)
-                table_data = et_sess.process_file(filepath=pdf_path, output_format="df", pages="all")
+#     try:
+#         # Loop through all PDF files in the directory
+#         for filename in os.listdir(references_dir):
+#             if filename.endswith(".pdf"):
+#                 pdf_path = os.path.join(references_dir, filename)
+#                 table_data = et_sess.process_file(filepath=pdf_path, output_format="df", pages="all")
                 
-                # Combine all extracted tables
-                combined_data = pd.DataFrame()
-                for each_table in table_data:
-                    combined_data = pd.concat([combined_data, each_table], ignore_index=True)
+#                 # Combine all extracted tables
+#                 combined_data = pd.DataFrame()
+#                 for each_table in table_data:
+#                     combined_data = pd.concat([combined_data, each_table], ignore_index=True)
 
-                # Convert to dictionary format for OpenAI
-                table_dict = combined_data.to_dict(orient="records")
-                extracted_data.append({"filename": filename, "tables": table_dict})
+#                 # Convert to dictionary format for OpenAI
+#                 table_dict = combined_data.to_dict(orient="records")
+#                 extracted_data.append({"filename": filename, "tables": table_dict})
 
-        # Use OpenAI to classify the data into categories
-        completion = client.chat.completions.create(
-            model="gpt-4",
-            messages=[
-                {
-                    "role": "system",
-                    "content": (
-                        "You are an assistant that processes geotechnical data. "
-                        "Classify the extracted table data into categories: Basic Properties, "
-                        "Engineering Properties, Hydraulic Properties, and Settlement Parameters "
-                        "based on the soil type. Output valid JSON grouped into these categories."
-                    ),
-                },
-                {"role": "user", "content": json.dumps(extracted_data)}
-            ],
-            temperature=0,
-        )
+#         # Use OpenAI to classify the data into categories
+#         completion = client.chat.completions.create(
+#             model="gpt-4",
+#             messages=[
+#                 {
+#                     "role": "system",
+#                     "content": (
+#                         "You are an assistant that processes geotechnical data. "
+#                         "Classify the extracted table data into categories: Basic Properties, "
+#                         "Engineering Properties, Hydraulic Properties, and Settlement Parameters "
+#                         "based on the soil type. Output valid JSON grouped into these categories."
+#                     ),
+#                 },
+#                 {"role": "user", "content": json.dumps(extracted_data)}
+#             ],
+#             temperature=0,
+#         )
 
-        # Parse OpenAI response
-        response_content = completion.choices[0].message.content
-        classified_data = json.loads(response_content)
+#         # Parse OpenAI response
+#         response_content = completion.choices[0].message.content
+#         classified_data = json.loads(response_content)
 
-        # Return the classified data to the frontend
-        return JsonResponse({"success": True, "classified_data": classified_data})
+#         # Return the classified data to the frontend
+#         return JsonResponse({"success": True, "classified_data": classified_data})
 
-    except Exception as e:
-        return JsonResponse({"error": str(e)}, status=500)
+#     except Exception as e:
+#         return JsonResponse({"error": str(e)}, status=500)

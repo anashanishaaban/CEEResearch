@@ -20,7 +20,7 @@ urlpatterns = [
 
     path("update-table", views.update_table, name="update_table"),
 
-    path("process-references", views.process_references, name="process_references"),
+    # path("process-references", views.process_references, name="process_references"),
 ]
 
 # Serve media files during development
