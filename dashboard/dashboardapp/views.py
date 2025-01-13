@@ -12,7 +12,7 @@ from markitdown import MarkItDown
 from ExtractTable import ExtractTable
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
-from langchain.chat_models import ChatOpenAI
+from langchain_community.chat_models import ChatOpenAI
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.schema import AIMessage, HumanMessage
 

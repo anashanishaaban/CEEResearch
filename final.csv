@@ -1,0 +1,453 @@
+"TABLE 1. TaylorSeriesReliabilityAnalysisforRetainingWall
+(withAllVariablesAssignedTheirMostLikelyValues,F =1.50)
+ss",,,,,,,,,,,,"˛
+S D S D S D S D
+DF 2 DF 2 DF 2 DF 2
+s = 1 1 2 1 3 1 4 (2a)
+F
+2 2 2 2
+s
+V = F (2b)
+F F
+MLV
+in which DF = (F1 2 F2). F1 is the factor of safety
+1 1 1 1
+calculated with the value of the first parameter (in this
+casetheequivalentfluidpressure)increasedbyonestan-
+dard deviation from its best estimate value. F2 is the
+1
+factor of safety calculated with the value of the first pa-
+rameter decreased by one standard deviation.
+IncalculatingF1andF2,thevaluesofalloftheother
+1 1
+variables are kept at their most likely values.
+The values of DF, DF, and DF are calculated by
+2 3 4
+varying the values of the other three variables (footing/
+sand friction angle, backfill unit weight, and concrete
+unit weight) by plus and minus one standard deviation
+from their most likely values. The results of these cal-
+culations are shown in Table 1.
+F = most likely value offactorofsafety,computed
+MLV
+using best estimate values for all of the parameters. For
+this example, F = 1.50.
+MLV
+3. Substituting the value of DF into (2a), the value of the
+standard deviation of the factor of safety (s ) is found
+F
+to be 0.25, and the coefficient of variation of the factor
+ofsafety(V ),calculatedusing(2b),isfoundtobe17%,
+F
+as shown at the bottom of Table 1.
+4. With both F and V known, the probability of failure
+MLV F
+and the reliability of the factor of safety can be deter-
+mined using Table 2 or one of the methods describedin
+Appendix I.Table 2 assumesalognormaldistributionof
+factor of safety values, which is usually a reasonable
+approximation.Thereisno‘‘proof’’thatfactorsofsafety
+are lognormally distributed, but the writer believes that
+it is a reasonable approximation.
+The assumption of a lognormal distribution for factor
+ofsafetydoesnotimplythatthevaluesoftheindividual
+variables (g , tan d, g , and g) must be distributed in
+ef bf c
+the same way.As discussed below, it is not necessaryto
+make any particular assumption concerning the distri-",,,,,,,
+"Variable
+(1)",,,,"Values
+(2)",,,"Factorsof
+safety
+(3)",,"DF
+(4)",,,,,,,,,,
+"Equivalentfluidunitweight,g
+ef
+Mostlikelyvaluepluss
+Mostlikelyvalueminuss
+Tangentofd
+Mostlikelyvaluepluss
+Mostlikelyvalueminuss
+Backfillunitweight,g
+bf
+Mostlikelyvaluepluss
+Mostlikelyvalueminuss
+Concreteunitweight,g
+c
+Mostlikelyvaluepluss
+Mostlikelyvalueminuss",,,,"45pcf
+35pcf
+0.55
+0.45
+127pcf
+113pcf
+152pcf
+148pcf",,,"F1=1.33
+F2=1.71
+F1=1.65
+F2=1.35
+F1=1.56
+F2=1.44
+F1=1.50
+F2=1.49",,"20.38
+0.30
+0.12
+0.01",,,,,,,,,,
+"Note:1pcf=0.157kN/m3
+standarddeviationoffactorofsafety
+=ˇ(0.38/2)21(0.30/2)21(0.12/2)21(0.01/2)2=0.25;
+coefficientofvariationoffactorofsafety=0.25/1.50=17%.",,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+"to be able to assess the reliability of F , as well as a best
+ss
+estimate of its value.This can be done using theTaylorseries
+method, which involves these steps:
+1. Estimate the standard deviations of the quantities in-
+volved in (1). Simple methods for estimating standard
+deviations are discussed in the next section ofthepaper.
+Using those methods, the following values of standard
+deviation of the parameters involved in this example
+have been estimated: s = standard deviation of the
+efp
+equivalent fluid pressure = 5 pcf (0.785 kN/m3); s =
+tand
+standard deviation of tan d = 0.05; s = standard de-
+gbf
+viation of the unit weight of backfill = 7 pcf (1.099 kN/
+m3); and s = standard deviation of the unit weight of
+gc
+concrete = 2 pcf (0.314 kN/m3).
+2. Use theTaylor series technique (Wolff 1994;U.S.Army
+Corps of Engineers 1997, 1998) to estimatethestandard
+deviation and the coefficient of variation ofthefactorof
+safety using these formulas:",,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+"TABLE 2. ProbabilitiesThatFactorofSafetyIsSmallerthan1.0,BasedonLognormalDistributionofFactorofSafety",,,,,,,,,,,,,,,,,,,
+"F
+MLV","CoefficientofVariationofFactorofSafety(V )
+F",,,,,,,,,,,,,,,,,,
+,2%,4%,6%,,8%,10%,,12%,,14%,16%,,20%,25%,30%,40%,50%,60%,80%
+"1.05
+1.10
+1.15
+1.16
+1.18
+1.20
+1.25
+1.30
+1.35
+1.40
+1.50
+1.60
+1.70
+1.80
+1.90
+2.00
+2.20
+2.40
+2.60
+2.80
+3.00","0.8%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%","12%
+0.9%
+0.03%
+0.01%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%","22%
+6%
+1.1%
+0.7%
+0.3%
+0.13%
+0.01%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%",,"28%
+12%
+4%
+3%
+2%
+1.2%
+0.3%
+0.06%
+0.01%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%","33%
+18%
+9%
+8%
+5%
+4%
+1.4%
+0.5%
+0.2%
+0.04%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%",,"36%
+23%
+13%
+12%
+9%
+7%
+4%
+1.6%
+0.7%
+0.3%
+0.04%
+0.01%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%",,"39%
+27%
+18%
+16%
+13%
+11%
+6%
+3%
+1.9%
+1.0%
+0.2%
+0.05%
+0.01%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%","41%
+30%
+21%
+20%
+17%
+14%
+9%
+6%
+4%
+2%
+0.7%
+0.2%
+0.06%
+0.01%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%
+0.00%",,"44%
+35%
+27%
+26%
+23%
+21%
+15%
+11%
+8%
+5%
+3%
+1.1%
+0.5%
+0.2%
+0.08%
+0.03%
+0.01%
+0.00%
+0.00%
+0.00%
+0.00%","47%
+40%
+33%
+32%
+29%
+27%
+22%
+17%
+14%
+11%
+6%
+4%
+2%
+1.2%
+0.65%
+0.36%
+0.10%
+0.03%
+0.01%
+0.00%
+0.00%","49%
+43%
+37%
+36%
+34%
+32%
+27%
+23%
+19%
+16%
+11%
+7%
+5%
+3%
+2%
+1.3%
+0.56%
+0.23%
+0.09%
+0.04%
+0.02%","53%
+48%
+43%
+42%
+41%
+39%
+35%
+31%
+28%
+25%
+19%
+15%
+12%
+9%
+7%
+5%
+1.3%
+1.9%
+1.1%
+0.66%
+0.39%","55%
+51%
+48%
+47%
+45%
+44%
+41%
+37%
+34%
+32%
+27%
+22%
+19%
+16%
+13%
+11%
+8%
+5%
+4%
+3%
+1.8%","58%
+54%
+51%
+50%
+49%
+48%
+45%
+42%
+40%
+37%
+32%
+28%
+25%
+22%
+19%
+17%
+13%
+10%
+7%
+6%
+4%","61%
+59%
+56%
+56%
+55%
+54%
+51%
+49%
+47%
+45%
+41%
+38%
+34%
+31%
+29%
+26%
+22%
+19%
+16%
+13%
+11%"
+"Note:F =factorofsafetycomputedusingmostlikelyvaluesofparameters.
+MLV",,,,,,,,,,,,,,,,,,,

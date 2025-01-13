@@ -9,3 +9,5 @@ pydantic
 openai
 langchain
 langchain_community
+psycopg2
+camelot
