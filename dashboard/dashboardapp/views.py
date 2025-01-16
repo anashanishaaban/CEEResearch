@@ -28,6 +28,9 @@ def index(request):
     """
     Render the main page for uploading and visualizing point clouds.
     """
+    tables_for_pdf = ExtractedTable.objects.filter(pdf_file_name="1_Duncan-2000-Factors-of-safety-and-reliability-in-geotechnical-engineering.pdf")
+    for table in tables_for_pdf:
+        print(table.table_index, table.table_data)
     return render(request, 'index.html')
 
 def soils(request):

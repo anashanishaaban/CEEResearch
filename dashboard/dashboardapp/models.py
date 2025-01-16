@@ -1,25 +1,13 @@
-import pdfplumber
-import json
-import csv
+from django.db import models
+from django.contrib.postgres.fields import JSONField  # only if using Django < 3.1
 
+class ExtractedTable(models.Model):
+    pdf_file_name = models.CharField(max_length=255)
+    table_index   = models.IntegerField()  # e.g. which table # in the PDF
+    table_data    = models.JSONField()     # If using Django 3.1+, JSONField is built-in
 
-# Path to your PDF file
-pdf_path = "/Users/anasshaaban/ResearchProject/dashboard/dashboardapp/references/1_Duncan-2000-Factors-of-safety-and-reliability-in-geotechnical-engineering.pdf"
-output_csv_path = "/Users/anasshaaban/ResearchProject/final.csv"
+    # Optionally add timestamps or other metadata
+    created_at    = models.DateTimeField(auto_now_add=True)
 
-# Open the PDF
-with pdfplumber.open(pdf_path) as pdf:
-    # Extract the desired page (change the index as needed)
-    page = pdf.pages[1]
-    
-    # Extract the table
-    table = page.extract_table()
-
-    # Save the table as a CSV file
-    with open(output_csv_path, "w", newline="", encoding="utf-8") as csv_file:
-        csv_writer = csv.writer(csv_file)
-        # Write rows to the CSV
-        for row in table:
-            csv_writer.writerow(row)
-
-print(f"Table extracted and saved as CSV to {output_csv_path}")
+    def __str__(self):
+        return f"{self.pdf_file_name} - Table #{self.table_index}"

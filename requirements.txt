@@ -11,3 +11,4 @@ langchain
 langchain_community
 psycopg2
 camelot
+aryn-sdk
