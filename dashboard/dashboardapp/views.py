@@ -28,9 +28,7 @@ def index(request):
     """
     Render the main page for uploading and visualizing point clouds.
     """
-    tables_for_pdf = ExtractedTable.objects.filter(pdf_file_name="1_Duncan-2000-Factors-of-safety-and-reliability-in-geotechnical-engineering.pdf")
-    for table in tables_for_pdf:
-        print(table.table_index, table.table_data)
+    request.session.flush()
     return render(request, 'index.html')
 
 def soils(request):
@@ -49,97 +47,121 @@ def upload_file(request):
             return HttpResponse("You must upload a PDF file.", status=400)
 
         try:
-            # Save the uploaded PDF file locally (in-memory)
-            pdf_file_path = f"/tmp/{pdf_file.name}"
-            with open(pdf_file_path, "wb") as f:
-                f.write(pdf_file.read())
+            # Step 1: Save the uploaded PDF file locally (in-memory)
+            try:
+                pdf_file_path = f"/tmp/{pdf_file.name}"
+                with open(pdf_file_path, "wb") as f:
+                    f.write(pdf_file.read())
+            except Exception as e:
+                print(f"Error while saving the PDF file: {e}")
+                return HttpResponse(f"Error while saving the PDF file: {str(e)}", status=500)
 
-            # Extract tables from the PDF using ExtractTable
-            table_data = et_sess.process_file(filepath=pdf_file_path, output_format="df", pages="all")
-            accumulated_data = pd.DataFrame()
+            # Step 2: Extract tables from the PDF using ExtractTable
+            try:
+                table_data = et_sess.process_file(filepath=pdf_file_path, output_format="df", pages="all")
+                accumulated_data = pd.DataFrame()
+                for each_table in table_data:
+                    accumulated_data = pd.concat([accumulated_data, each_table], ignore_index=True)
+            except Exception as e:
+                print(f"Error while extracting tables from PDF: {e}")
+                return HttpResponse(f"Error while extracting tables from PDF: {str(e)}", status=500)
 
-            for each_table in table_data:
-                accumulated_data = pd.concat([accumulated_data, each_table], ignore_index=True)
+            # Step 3: Extract text from the PDF using MarkItDown
+            try:
+                md = MarkItDown()
+                result = md.convert(pdf_file_path)
+                extracted_text = result.text_content
+            except Exception as e:
+                print(f"Error while extracting text with MarkItDown: {e}")
+                return HttpResponse(f"Error while extracting text with MarkItDown: {str(e)}", status=500)
 
-            # Extract text from the PDF using MarkItDown
-            md = MarkItDown()
-            result = md.convert(pdf_file_path)
-            extracted_text = result.text_content
+            # Step 4: Combine extracted data
+            try:
+                excel_data = accumulated_data.to_dict(orient="records")
+                combined_input = f"Excel Data: {excel_data}\n\nText File Content: {extracted_text}"
+            except Exception as e:
+                print(f"Error while combining extracted data: {e}")
+                return HttpResponse(f"Error while combining extracted data: {str(e)}", status=500)
 
-            # Combine extracted data
-            excel_data = accumulated_data.to_dict(orient="records")
-            combined_input = f"Excel Data: {excel_data}\n\nText File Content: {extracted_text}"
+            # Step 5: Call OpenAI GPT-4 with the combined data
+            try:
+                completion = client.chat.completions.create(
+                    model="gpt-4",
+                    messages=[
+                        {"role": "system", "content": "You are an assistant that processes geotechnical data. Output only valid JSON."},
+                        {
+                            "role": "user",
+                            "content": f"""Analyze this data and return a JSON object with three parts:
+                            1. header_data: containing Borehole Unique ID, Ground Elevation, Depth of exploration, ground water depth, and year of exploration.
+                            2. soil_layers: containing an array of soil layers, water, and barge, with depth ranges and classifications. The depth range starts from 0, and the first classification is from 0 - whatever depth.
+                            3. averages: including Average SPT (N60), Average Moisture Content (%), Average Cohesion (psf), and Average Bulk Unit Weight (pcf).
 
-            # Store the original excel_data in the session
-            request.session["original_excel_data"] = excel_data
-            request.session["extracted_text"] = extracted_text
+                            **Important:** Only use values from the 'Depth/Elev.' column for depth calculations, not the 'Depth' column on the far left.
 
-            # Updated prompt to include averages
-            completion = client.chat.completions.create(
-                model="gpt-4",
-                messages=[
-                    {"role": "system", "content": "You are an assistant that processes geotechnical data. Output only valid JSON."},
-                    {
-                        "role": "user",
-                        "content": f"""Analyze this data and return a JSON object with three parts:
-                        1. header_data: containing Borehole Unique ID, Ground Elevation, Depth of exploration, ground water depth, and year of exploration.
-                        2. soil_layers: containing an array of soil layers, water, and barge, with depth ranges and classifications. The depth range starts from 0, and the first classification is from 0 - whatever depth.
-                        3. averages: including Average SPT (N60), Average Moisture Content (%), Average Cohesion (psf), and Average Bulk Unit Weight (pcf).
-
-                        **Important:** Only use values from the 'Depth/Elev.' column for depth calculations, not the 'Depth' column on the far left.
-
-                        Format the response as:
-                        {{
-                            "header_data": {{
-                                "borehole_id": string,
-                                "ground_elevation": number,
-                                "depth_of_exploration": number,
-                                "groundwater_depth": string,
-                                "year_of_exploration": number
-                            }},
-                            "soil_layers": [
-                                {{
-                                    "depth_start": number,
-                                    "depth_end": number,
-                                    "soil_type": string
+                            Format the response as:
+                            {{
+                                "header_data": {{
+                                    "borehole_id": string,
+                                    "ground_elevation": number,
+                                    "depth_of_exploration": number,
+                                    "groundwater_depth": string,
+                                    "year_of_exploration": number
+                                }},
+                                "soil_layers": [
+                                    {{
+                                        "depth_start": number,
+                                        "depth_end": number,
+                                        "soil_type": string
+                                    }}
+                                ],
+                                "averages": {{
+                                    "average_spt_n60": number,
+                                    "average_moisture_content": number,
+                                    "average_cohesion": string,
+                                    "average_bulk_unit_weight": string
                                 }}
-                            ],
-                            "averages": {{
-                                "average_spt_n60": number,
-                                "average_moisture_content": number,
-                                "average_cohesion": string,
-                                "average_bulk_unit_weight": string
                             }}
-                        }}
 
-                        Data to analyze: {combined_input}"""
-                    }
-                ],
-                temperature=0
-            )
+                            Data to analyze: {combined_input}"""
+                        }
+                    ],
+                    temperature=0
+                )
+                response_content = completion.choices[0].message.content
+            except Exception as e:
+                print(f"Error while calling OpenAI GPT-4: {e}")
+                return HttpResponse(f"Error while calling OpenAI GPT-4: {str(e)}", status=500)
 
-            # Parse the response content as JSON
-            response_content = completion.choices[0].message.content
+            # Step 6: Parse the response content as JSON
             try:
                 processed_data = json.loads(response_content)
                 if not all(key in processed_data for key in ['header_data', 'soil_layers', 'averages']):
                     raise ValueError("Missing required data fields in response")
-            except json.JSONDecodeError:
+            except json.JSONDecodeError as e:
+                print(f"Error while parsing JSON from GPT-4: {e}")
                 return HttpResponse("Error: Invalid JSON response from AI", status=500)
             except ValueError as e:
+                print(f"Error while validating JSON response: {e}")
                 return HttpResponse(f"Error: {str(e)}", status=500)
 
-            # Save processed data and file names in the session
-            request.session["uploaded_file_names"] = [pdf_file.name]
-            request.session["processed_data"] = processed_data
+            # Step 7: Save processed data and file names in the session
+            try:
+                request.session["uploaded_file_names"] = [pdf_file.name]
+                request.session["processed_data"] = processed_data
+            except Exception as e:
+                print(f"Error while saving data to session: {e}")
+                return HttpResponse(f"Error while saving data to session: {str(e)}", status=500)
 
             return redirect("boreholesummary")
 
         except Exception as e:
-            return HttpResponse(f"An error occurred while processing the files: {str(e)}", status=500)
+            print(f"Unexpected error: {e}")
+            return HttpResponse(f"An unexpected error occurred: {str(e)}", status=500)
 
+    # GET method or no files uploaded
     uploaded_file_names = request.session.get("uploaded_file_names", [])
     return render(request, "fileupload.html", {"uploaded_file_names": uploaded_file_names})
+
 
 @csrf_exempt
 def update_table(request):
